@@ -1,14 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Donut Clicker</title>
-</head>
-<body>
+<html>
 
-    <script src="app.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Clicker</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/Donut.png">
+</head>
+
+<body>
+    <div class="container">
+        <div id="topBar">
+            <nav>
+                <a href="#" class="popup-link" data-popup="home">Donut Clicker</a>
+                <a href="#" class="popup-link" data-popup="about">About the Company</a>
+                <a href="#" class="popup-link" data-popup="inspo">Inspiration</a>
+                <a href="#" class="popup-link" data-popup="contact">Contact Info</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Pop-up containers -->
+    <div id="popup-home" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" data-popup="home">X</span>
+            <h2>Donut Clicker</h2>
+            <p>This is an idle Donut Clicking game. Please click the Donut in the center to get started! </p>
+        </div>
+    </div>
+
+    <div id="popup-about" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" data-popup="about">X</span>
+            <h2>About the Company</h2>
+            <p>Thank you for your interest in Fred the Baker Baking Company! Fred is ready to retire and now relies on
+                the Auto Clicker success you see in front of you! Please click away and generate virtual donuts for the
+                whole world! </p>
+        </div>
+    </div>
+
+    <div id="popup-inspo" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" data-popup="inspo">X</span>
+            <h2>Our Inspiration</h2>
+            <p>Please check out Orteil's wonderful game we used as inspiration: <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">Cookie Clicker</a></p>
+        </div>
+    </div>
+
+    <div id="popup-contact" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" data-popup="contact">X</span>
+            <h2>Contact Me Here</h2>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/stephanie-e-czajkowski/" target="_blank">LinkedIn Profile</a></p>
+            <p>E-mail: <a href="mailto:stephanie.e.czajkowski@gmail.com">stephanie.e.czajkowski@gmail.com</a></p>
+        </div>
+    </div>
+    <center>
+        <img src="Assets/Donut.png" id="clickButton" onclick="increment()">
+
+        <div id="info">
+            <p id="donutCounter"> Donuts = <span id="showDonuts" class="number">0</span></p>
+
+            <p>Donuts per second = <span id="showDonutsPerSecond" class="number">0</span></p>
+
+            <p>Donuts per click = <span id="showDonutsPerClick" class="number">1</span></p>
+
+        </div>
+
+
+        <div class="itemContainer">
+            <div class="item">
+                <div class="containerImage">
+                    <img src="Assets/Oven.png" id="OvenPic" class="itemImage">
+
+                    <div class="buyButtonContainer">
+                        <button onclick="buyOven()" class="buyButton">Buy</button>
+                    </div>
+                </div>
+
+                <div class="containerText">
+                    <p>Ovens: <span id="ovenNum">0</span></p>
+
+                    <p>Oven Cost: <span id="ovenCost">10</span></p>
+
+                    <p>+1 Donuts/second</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="containerImage">
+                    <img src="Assets/Baker.jpg" id="bakerPic" class="itemImage">
+
+                    <div class="buyButtonContainer">
+                        <button onclick="buyBaker()" class="buyButton">Buy</button>
+                    </div>
+                </div>
+
+                <div class="containerText">
+                    <p>Bakers: <span id="bakerNum">0</span></p>
+
+                    <p>Baker Cost: <span id="bakerCost">50</span></p>
+
+                    <p>+10 Donuts per click</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="containerImage">
+                    <img src="Assets/Delivery Truck.png" id="deliveryTruckImage" class="itemImage">
+
+                    <div class="buyButtonContainer">
+                        <button onclick="buyTruck()" class="buyButton">Buy</button>
+                    </div>
+                </div>
+
+                <div class="containerText">
+                    <p>Trucks: <span id="truckNum">0</span></p>
+
+                    <p>Truck Cost: <span id="truckCost">200</span></p>
+
+                    <p>+100 Donuts/second</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="containerImage">
+                    <img src="Assets/Stores.png" class="itemImage">
+
+                    <div class="buyButtonContainer">
+                        <button onclick="buyStores()" class="buyButton">Buy</button>
+                    </div>
+                </div>
+
+                <div class="containerText"> <!-- contains stats about item -->
+                    <p>Stores: <span id="storeNum">0</span></p>
+
+                    <p>Store cost: <span id="storeCost">500</span></p>
+
+                    <p>+500 Donuts per click</p>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </center>
 </body>
+
 </html>
